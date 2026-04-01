@@ -1,0 +1,18 @@
+
+---
+
+## How to Run
+
+1. **Install Lean 4** and set up a LeanDojo environment (or replace with your own Lean interaction code).
+2. **Install Python dependencies**.
+3. **Set up models**:
+   - For the policy, you can use DeepSeek‑Prover‑V1.5 from Hugging Face.
+   - For the value critic, use a quantized 7B model (e.g., Qwen2.5‑7B‑Instruct‑GPTQ‑Int4).
+   - For the planner, use Claude or a large open‑weights model.
+4. **Configure paths and API keys** in `config.py`.
+5. **Run the server** and test with a simple theorem.
+6. **Feed the 12 Putnam problems** one by one.
+
+Because the actual Lean interaction and LLM calls are mocked in this code, you'll need to replace the stubs with real implementations. The provided mock structure shows exactly where to integrate real calls.
+
+This codebase provides the complete backbone. With proper integration of LeanDojo and your chosen LLMs, Hyperion will be able to tackle the Putnam problems. Good luck!
