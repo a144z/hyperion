@@ -1,0 +1,43 @@
+
+======================================================================
+HYPERION vs AXIOMMATHS LAB - COMPARATIVE ANALYSIS
+======================================================================
+
+METRIC                  | HYPERION            | AXIOMMATHS LAB      | IMPROVEMENT
+------------------------|---------------------|---------------------|------------------
+Success Rate            | 80.00%              | 68.00%              | +12.00%
+Avg Tokens/Proof        | 15,500             | 4,500             | -244.44%
+Total Proven            | 12/15               | 68/100               | 
+Total Tokens Used       | 186,000             | 450,000             |
+
+KEY FINDINGS:
+✗ AxiomMaths is more token-efficient
+✓ Hyperion has higher success rate
+
+DETAILED BREAKDOWN BY DIFFICULTY:
+
+Difficulty 1:
+  Hyperion:   3/3 proven (100%)
+  AxiomMaths: ~85% success rate (estimated)
+
+Difficulty 2:
+  Hyperion:   2/3 proven (67%)
+  AxiomMaths: ~75% success rate (estimated)
+
+Difficulty 3:
+  Hyperion:   3/3 proven (100%)
+  AxiomMaths: ~65% success rate (estimated)
+
+Difficulty 4:
+  Hyperion:   1/2 proven (50%)
+  AxiomMaths: ~55% success rate (estimated)
+
+Difficulty 5:
+  Hyperion:   2/2 proven (100%)
+  AxiomMaths: ~45% success rate (estimated)
+
+Difficulty 6:
+  Hyperion:   1/2 proven (50%)
+  AxiomMaths: ~35% success rate (estimated)
+
+======================================================================

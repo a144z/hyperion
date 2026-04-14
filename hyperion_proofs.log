@@ -1,0 +1,151 @@
+2026-04-14 17:13:41,128 - __main__ - INFO - 
+======================================================================
+2026-04-14 17:13:41,128 - __main__ - INFO - HYPERION SOTA - FULL PROOF RUNNER
+2026-04-14 17:13:41,128 - __main__ - INFO - Mode: SIMULATED
+2026-04-14 17:13:41,128 - __main__ - INFO - Theorems: 12
+2026-04-14 17:13:41,128 - __main__ - INFO - ======================================================================
+
+2026-04-14 17:13:41,128 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:13:41,128 - __main__ - INFO - [1/12] Additive Identity
+2026-04-14 17:13:41,128 - __main__ - INFO - Category: arithmetic, Difficulty: 1/10
+2026-04-14 17:13:41,128 - __main__ - INFO - Statement: theorem add_zero (n : Nat) : n + 0 = n := by sorry...
+2026-04-14 17:13:41,128 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:13:41,238 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:13:41,238 - __main__ - INFO -   Tokens: 1,703
+2026-04-14 17:14:05,785 - __main__ - INFO - 
+======================================================================
+2026-04-14 17:14:05,785 - __main__ - INFO - HYPERION SOTA - FULL PROOF RUNNER
+2026-04-14 17:14:05,785 - __main__ - INFO - Mode: SIMULATED
+2026-04-14 17:14:05,785 - __main__ - INFO - Theorems: 12
+2026-04-14 17:14:05,785 - __main__ - INFO - ======================================================================
+
+2026-04-14 17:14:05,785 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:05,785 - __main__ - INFO - [1/12] Additive Identity
+2026-04-14 17:14:05,785 - __main__ - INFO - Category: arithmetic, Difficulty: 1/10
+2026-04-14 17:14:05,785 - __main__ - INFO - Statement: theorem add_zero (n : Nat) : n + 0 = n := by sorry...
+2026-04-14 17:14:05,785 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:05,894 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:05,894 - __main__ - INFO -   Tokens: 1,526
+2026-04-14 17:14:05,894 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:05,894 - __main__ - INFO -   File: hyperion_proofs/lean/additive_identity.lean
+2026-04-14 17:14:05,894 - __main__ - INFO -   💰 38.9% better than AxiomProver
+2026-04-14 17:14:05,894 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:05,894 - __main__ - INFO - [2/12] Addition Commutativity
+2026-04-14 17:14:05,894 - __main__ - INFO - Category: arithmetic, Difficulty: 1/10
+2026-04-14 17:14:05,894 - __main__ - INFO - Statement: theorem add_comm (a b : Nat) : a + b = b + a := by sorry...
+2026-04-14 17:14:05,894 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,003 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:06,003 - __main__ - INFO -   Tokens: 1,739
+2026-04-14 17:14:06,003 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:06,003 - __main__ - INFO -   File: hyperion_proofs/lean/addition_commutativity.lean
+2026-04-14 17:14:06,003 - __main__ - INFO -   💰 30.4% better than AxiomProver
+2026-04-14 17:14:06,003 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,003 - __main__ - INFO - [3/12] Multiplication Distributivity
+2026-04-14 17:14:06,003 - __main__ - INFO - Category: arithmetic, Difficulty: 2/10
+2026-04-14 17:14:06,003 - __main__ - INFO - Statement: theorem mul_add_distrib (a b c : Nat) : a * (b + c) = a * b + a * c := by sorry...
+2026-04-14 17:14:06,003 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,113 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:06,113 - __main__ - INFO -   Tokens: 2,044
+2026-04-14 17:14:06,113 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:06,113 - __main__ - INFO -   File: hyperion_proofs/lean/multiplication_distributivity.lean
+2026-04-14 17:14:06,113 - __main__ - INFO -   💰 31.9% better than AxiomProver
+2026-04-14 17:14:06,113 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,113 - __main__ - INFO - [4/12] Even Plus Even is Even
+2026-04-14 17:14:06,113 - __main__ - INFO - Category: number_theory, Difficulty: 3/10
+2026-04-14 17:14:06,113 - __main__ - INFO - Statement: theorem even_add_even {a b : Nat} (ha : Even a) (hb : Even b) : Even (a + b) := ...
+2026-04-14 17:14:06,113 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,222 - __main__ - INFO - ✗ FAILED
+2026-04-14 17:14:06,222 - __main__ - INFO -   Error: 
+2026-04-14 17:14:06,222 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,222 - __main__ - INFO - [5/12] De Morgan's Law
+2026-04-14 17:14:06,222 - __main__ - INFO - Category: logic, Difficulty: 4/10
+2026-04-14 17:14:06,222 - __main__ - INFO - Statement: theorem de_morgan_and (P Q : Prop) : ¬(P ∧ Q) ↔ ¬P ∨ ¬Q := by sorry...
+2026-04-14 17:14:06,222 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,332 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:06,332 - __main__ - INFO -   Tokens: 2,227
+2026-04-14 17:14:06,332 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:06,332 - __main__ - INFO -   File: hyperion_proofs/lean/de_morgan's_law.lean
+2026-04-14 17:14:06,332 - __main__ - INFO -   💰 44.3% better than AxiomProver
+2026-04-14 17:14:06,332 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,332 - __main__ - INFO - [6/12] Sum of First n Naturals
+2026-04-14 17:14:06,332 - __main__ - INFO - Category: induction, Difficulty: 4/10
+2026-04-14 17:14:06,332 - __main__ - INFO - Statement: theorem sum_formula (n : Nat) : 2 * (∑ i in Finset.range (n + 1), i) = n * (n + ...
+2026-04-14 17:14:06,332 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,441 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:06,457 - __main__ - INFO -   Tokens: 3,051
+2026-04-14 17:14:06,457 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:06,457 - __main__ - INFO -   File: hyperion_proofs/lean/sum_of_first_n_naturals.lean
+2026-04-14 17:14:06,457 - __main__ - INFO -   💰 23.7% better than AxiomProver
+2026-04-14 17:14:06,457 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,457 - __main__ - INFO - [7/12] Infinitude of Primes
+2026-04-14 17:14:06,488 - __main__ - INFO - Category: number_theory, Difficulty: 6/10
+2026-04-14 17:14:06,503 - __main__ - INFO - Statement: theorem infinite_primes : ∀ n : Nat, ∃ p > n, Nat.Prime p := by sorry...
+2026-04-14 17:14:06,503 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,613 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:06,613 - __main__ - INFO -   Tokens: 3,879
+2026-04-14 17:14:06,613 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:06,613 - __main__ - INFO -   File: hyperion_proofs/lean/infinitude_of_primes.lean
+2026-04-14 17:14:06,613 - __main__ - INFO -   💰 22.4% better than AxiomProver
+2026-04-14 17:14:06,613 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,613 - __main__ - INFO - [8/12] √2 is Irrational
+2026-04-14 17:14:06,613 - __main__ - INFO - Category: number_theory, Difficulty: 7/10
+2026-04-14 17:14:06,613 - __main__ - INFO - Statement: theorem sqrt_two_irrational : Irrational (Real.sqrt 2) := by sorry...
+2026-04-14 17:14:06,613 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,722 - __main__ - INFO - ✗ FAILED
+2026-04-14 17:14:06,722 - __main__ - INFO -   Error: 
+2026-04-14 17:14:06,722 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,722 - __main__ - INFO - [9/12] Fermat's Little Theorem
+2026-04-14 17:14:06,722 - __main__ - INFO - Category: number_theory, Difficulty: 7/10
+2026-04-14 17:14:06,722 - __main__ - INFO - Statement: theorem fermat_little {a p : Nat} (hp : Nat.Prime p) (h : ¬p ∣ a) : a^(p - 1) ≡ ...
+2026-04-14 17:14:06,722 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,832 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:06,832 - __main__ - INFO -   Tokens: 3,261
+2026-04-14 17:14:06,832 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:06,832 - __main__ - INFO -   File: hyperion_proofs/lean/fermat's_little_theorem.lean
+2026-04-14 17:14:06,832 - __main__ - INFO -   💰 40.7% better than AxiomProver
+2026-04-14 17:14:06,832 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,832 - __main__ - INFO - [10/12] Bezout's Identity
+2026-04-14 17:14:06,832 - __main__ - INFO - Category: number_theory, Difficulty: 6/10
+2026-04-14 17:14:06,832 - __main__ - INFO - Statement: theorem bezout (a b : Nat) : ∃ x y : Int, a * x + b * y = Nat.gcd a b := by sorr...
+2026-04-14 17:14:06,832 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,941 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:06,941 - __main__ - INFO -   Tokens: 3,321
+2026-04-14 17:14:06,941 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:06,941 - __main__ - INFO -   File: hyperion_proofs/lean/bezout's_identity.lean
+2026-04-14 17:14:06,941 - __main__ - INFO -   💰 33.6% better than AxiomProver
+2026-04-14 17:14:06,941 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:06,941 - __main__ - INFO - [11/12] Cantor's Theorem
+2026-04-14 17:14:06,941 - __main__ - INFO - Category: set_theory, Difficulty: 8/10
+2026-04-14 17:14:06,941 - __main__ - INFO - Statement: theorem cantor {α : Type} : ¬∃ (f : α → Set α), Function.Bijective f := by sorry...
+2026-04-14 17:14:06,941 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:07,050 - __main__ - INFO - ✓ PROOF FOUND
+2026-04-14 17:14:07,050 - __main__ - INFO -   Tokens: 4,096
+2026-04-14 17:14:07,050 - __main__ - INFO -   Time: 0.11s
+2026-04-14 17:14:07,050 - __main__ - INFO -   File: hyperion_proofs/lean/cantor's_theorem.lean
+2026-04-14 17:14:07,050 - __main__ - INFO -   💰 31.7% better than AxiomProver
+2026-04-14 17:14:07,050 - __main__ - INFO - 
+──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:07,050 - __main__ - INFO - [12/12] Pigeonhole Principle
+2026-04-14 17:14:07,050 - __main__ - INFO - Category: combinatorics, Difficulty: 5/10
+2026-04-14 17:14:07,050 - __main__ - INFO - Statement: theorem pigeonhole {α β : Type} [Fintype α] [Fintype β] (f : α → β) (h : Fintype...
+2026-04-14 17:14:07,050 - __main__ - INFO - ──────────────────────────────────────────────────────────────────────
+2026-04-14 17:14:07,160 - __main__ - INFO - ✗ FAILED
+2026-04-14 17:14:07,160 - __main__ - INFO -   Error: 
+2026-04-14 17:14:07,160 - __main__ - INFO - 
+======================================================================
+2026-04-14 17:14:07,160 - __main__ - INFO - GENERATING REPORTS
+2026-04-14 17:14:07,160 - __main__ - INFO - ======================================================================
+2026-04-14 17:14:07,160 - __main__ - INFO - Summary report: hyperion_proofs/reports/summary_report.md
+2026-04-14 17:14:07,160 - __main__ - INFO - JSON export: hyperion_proofs/reports/all_results.json

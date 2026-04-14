@@ -1,0 +1,266 @@
+{
+  "timestamp": "2026-04-14T16:58:30.325777",
+  "system": "Hyperion (Simulated)",
+  "total_theorems": 15,
+  "proven": 9,
+  "failed": 6,
+  "success_rate": 0.6,
+  "total_tokens": 186000,
+  "avg_tokens_per_proof": 20666.666666666668,
+  "avg_time_per_proof": 0.001041873296101888,
+  "total_time": 0.01562809944152832,
+  "results": [
+    {
+      "theorem_id": "arith_001",
+      "theorem_name": "Additive Identity",
+      "difficulty": 1,
+      "success": true,
+      "tactics_used": [
+        "simp",
+        "rfl"
+      ],
+      "total_tokens": 3450,
+      "input_tokens": 1950,
+      "output_tokens": 1500,
+      "search_nodes_explored": 104,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 2
+    },
+    {
+      "theorem_id": "arith_002",
+      "theorem_name": "Commutativity of Addition",
+      "difficulty": 1,
+      "success": false,
+      "tactics_used": [],
+      "total_tokens": 3450,
+      "input_tokens": 1950,
+      "output_tokens": 1500,
+      "search_nodes_explored": 70,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 0
+    },
+    {
+      "theorem_id": "arith_003",
+      "theorem_name": "Distributivity",
+      "difficulty": 1,
+      "success": true,
+      "tactics_used": [
+        "apply Nat.mul_distrib_left"
+      ],
+      "total_tokens": 3450,
+      "input_tokens": 1950,
+      "output_tokens": 1500,
+      "search_nodes_explored": 92,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 1
+    },
+    {
+      "theorem_id": "num_001",
+      "theorem_name": "Even Number Sum",
+      "difficulty": 2,
+      "success": false,
+      "tactics_used": [],
+      "total_tokens": 6400,
+      "input_tokens": 3200,
+      "output_tokens": 3200,
+      "search_nodes_explored": 172,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 0
+    },
+    {
+      "theorem_id": "num_002",
+      "theorem_name": "Square of Odd is Odd",
+      "difficulty": 2,
+      "success": true,
+      "tactics_used": [
+        "intro",
+        "cases",
+        "use",
+        "ring"
+      ],
+      "total_tokens": 6400,
+      "input_tokens": 3200,
+      "output_tokens": 3200,
+      "search_nodes_explored": 111,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 4
+    },
+    {
+      "theorem_id": "num_003",
+      "theorem_name": "Divisibility Transitivity",
+      "difficulty": 2,
+      "success": true,
+      "tactics_used": [
+        "intro",
+        "cases",
+        "use",
+        "rw"
+      ],
+      "total_tokens": 6400,
+      "input_tokens": 3200,
+      "output_tokens": 3200,
+      "search_nodes_explored": 161,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 4
+    },
+    {
+      "theorem_id": "logic_001",
+      "theorem_name": "De Morgan's Law 1",
+      "difficulty": 3,
+      "success": true,
+      "tactics_used": [
+        "apply Iff.intro",
+        "intro",
+        "by_cases"
+      ],
+      "total_tokens": 10250,
+      "input_tokens": 4750,
+      "output_tokens": 5500,
+      "search_nodes_explored": 201,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 3
+    },
+    {
+      "theorem_id": "logic_002",
+      "theorem_name": "De Morgan's Law 2",
+      "difficulty": 3,
+      "success": true,
+      "tactics_used": [
+        "apply Iff.intro",
+        "intro",
+        "constructor"
+      ],
+      "total_tokens": 10250,
+      "input_tokens": 4750,
+      "output_tokens": 5500,
+      "search_nodes_explored": 163,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 3
+    },
+    {
+      "theorem_id": "logic_003",
+      "theorem_name": "Contrapositive",
+      "difficulty": 3,
+      "success": false,
+      "tactics_used": [],
+      "total_tokens": 10250,
+      "input_tokens": 4750,
+      "output_tokens": 5500,
+      "search_nodes_explored": 220,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 0
+    },
+    {
+      "theorem_id": "ind_001",
+      "theorem_name": "Sum of First n Naturals",
+      "difficulty": 4,
+      "success": true,
+      "tactics_used": [
+        "induction",
+        "simp",
+        "ring"
+      ],
+      "total_tokens": 15000,
+      "input_tokens": 6600,
+      "output_tokens": 8400,
+      "search_nodes_explored": 290,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 3
+    },
+    {
+      "theorem_id": "ind_002",
+      "theorem_name": "Sum of Geometric Series",
+      "difficulty": 4,
+      "success": true,
+      "tactics_used": [
+        "induction",
+        "simp",
+        "ring"
+      ],
+      "total_tokens": 15000,
+      "input_tokens": 6600,
+      "output_tokens": 8400,
+      "search_nodes_explored": 299,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 3
+    },
+    {
+      "theorem_id": "nt_001",
+      "theorem_name": "Infinitely Many Primes (Weak Form)",
+      "difficulty": 5,
+      "success": false,
+      "tactics_used": [],
+      "total_tokens": 20650,
+      "input_tokens": 8750,
+      "output_tokens": 11900,
+      "search_nodes_explored": 306,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 0
+    },
+    {
+      "theorem_id": "nt_002",
+      "theorem_name": "Bezout's Identity (Simple)",
+      "difficulty": 5,
+      "success": false,
+      "tactics_used": [],
+      "total_tokens": 20650,
+      "input_tokens": 8750,
+      "output_tokens": 11900,
+      "search_nodes_explored": 345,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 0
+    },
+    {
+      "theorem_id": "classic_001",
+      "theorem_name": "sqrt(2) is Irrational",
+      "difficulty": 6,
+      "success": true,
+      "tactics_used": [
+        "apply",
+        "intro",
+        "cases"
+      ],
+      "total_tokens": 27200,
+      "input_tokens": 11200,
+      "output_tokens": 16000,
+      "search_nodes_explored": 347,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 3
+    },
+    {
+      "theorem_id": "classic_002",
+      "theorem_name": "Cantor's Theorem (Finite)",
+      "difficulty": 6,
+      "success": false,
+      "tactics_used": [],
+      "total_tokens": 27200,
+      "input_tokens": 11200,
+      "output_tokens": 16000,
+      "search_nodes_explored": 390,
+      "time_seconds": 0.0,
+      "error_message": "",
+      "proof_length": 0
+    }
+  ],
+  "token_stats": {
+    "total_tokens": 186000,
+    "input_tokens": 82800,
+    "output_tokens": 103200,
+    "num_calls": 15,
+    "avg_tokens_per_call": 12400.0
+  }
+}

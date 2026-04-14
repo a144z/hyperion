@@ -1,0 +1,320 @@
+{
+  "proofs": [
+    {
+      "id": "real_001",
+      "name": "Addition Commutativity",
+      "category": "arithmetic",
+      "difficulty": 1,
+      "description": "For all natural numbers a and b, a + b = b + a",
+      "lean_code": "theorem add_comm_proof (a b : Nat) : a + b = b + a := by\n  induction a with\n  | zero => simp\n  | succ a' ih =>\n    rw [Nat.add_succ, ih, Nat.add_succ]",
+      "expected_proof_tokens": 150,
+      "key_lemmas": [
+        "Nat.add_zero",
+        "Nat.add_succ",
+        "induction"
+      ],
+      "tags": [
+        "basic",
+        "arithmetic",
+        "induction"
+      ]
+    },
+    {
+      "id": "real_002",
+      "name": "Distributivity of Multiplication over Addition",
+      "category": "arithmetic",
+      "difficulty": 1,
+      "description": "a * (b + c) = a * b + a * c",
+      "lean_code": "theorem distrib_proof (a b c : Nat) : a * (b + c) = a * b + a * c := by\n  induction a with\n  | zero => simp\n  | succ a' ih =>\n    rw [Nat.mul_succ, ih, Nat.mul_succ, Nat.add_assoc]",
+      "expected_proof_tokens": 180,
+      "key_lemmas": [
+        "Nat.mul_zero",
+        "Nat.mul_succ",
+        "Nat.add_assoc"
+      ],
+      "tags": [
+        "arithmetic",
+        "distributivity"
+      ]
+    },
+    {
+      "id": "real_003",
+      "name": "Sum of Even Numbers is Even",
+      "category": "number_theory",
+      "difficulty": 2,
+      "description": "If a and b are even, then a + b is even",
+      "lean_code": "theorem even_add_even {a b : Nat} (ha : Even a) (hb : Even b) : Even (a + b) := by\n  rw [even_iff_two_dvd] at ha hb \u22a2\n  obtain \u27e8k, rfl\u27e9 := ha\n  obtain \u27e8l, rfl\u27e9 := hb\n  use k + l\n  ring",
+      "expected_proof_tokens": 320,
+      "key_lemmas": [
+        "even_iff_two_dvd",
+        "dvd_add"
+      ],
+      "tags": [
+        "number_theory",
+        "even",
+        "divisibility"
+      ]
+    },
+    {
+      "id": "real_004",
+      "name": "Product of Odd Numbers is Odd",
+      "category": "number_theory",
+      "difficulty": 2,
+      "description": "If a and b are odd, then a * b is odd",
+      "lean_code": "theorem odd_mul_odd {a b : Nat} (ha : Odd a) (hb : Odd b) : Odd (a * b) := by\n  cases' ha with k hk\n  cases' hb with l hl\n  rw [hk, hl]\n  use 2 * k * l + k + l\n  ring",
+      "expected_proof_tokens": 350,
+      "key_lemmas": [
+        "Odd",
+        "ring"
+      ],
+      "tags": [
+        "number_theory",
+        "odd",
+        "multiplication"
+      ]
+    },
+    {
+      "id": "real_005",
+      "name": "De Morgan's Law: \u00ac(P \u2227 Q) \u2194 \u00acP \u2228 \u00acQ",
+      "category": "logic",
+      "difficulty": 3,
+      "description": "Negation of conjunction equals disjunction of negations",
+      "lean_code": "theorem de_morgan_and (P Q : Prop) : \u00ac(P \u2227 Q) \u2194 \u00acP \u2228 \u00acQ := by\n  apply Iff.intro\n  \u00b7 intro h\n    by_cases\n    \u00b7 assume hP : P\n      have hQ : Q := by\n        by_contra h\n        exact h \u27e8hP, h\u27e9\n      contradiction\n    \u00b7 exact Or.inr \u2039\u00acQ\u203a\n  \u00b7 intro h\n    cases h\n    \u00b7 intro hPQ\n      exact \u2039\u00acP\u203a hPQ.left\n    \u00b7 intro hPQ\n      exact \u2039\u00acQ\u203a hPQ.right",
+      "expected_proof_tokens": 580,
+      "key_lemmas": [
+        "Iff.intro",
+        "by_cases",
+        "contradiction"
+      ],
+      "tags": [
+        "logic",
+        "classical",
+        "de_morgan"
+      ]
+    },
+    {
+      "id": "real_006",
+      "name": "Sum Formula: 2 \u00d7 \u03a3(i=0..n) i = n \u00d7 (n+1)",
+      "category": "induction",
+      "difficulty": 3,
+      "description": "The sum of first n natural numbers equals n(n+1)/2",
+      "lean_code": "theorem sum_first_n_formula (n : Nat) : \n    2 * (\u2211 i in Finset.range (n + 1), i) = n * (n + 1) := by\n  induction n with\n  | zero => simp\n  | succ n ih =>\n    rw [Finset.sum_range_succ, ih]\n    ring",
+      "expected_proof_tokens": 420,
+      "key_lemmas": [
+        "Finset.sum_range_succ",
+        "induction",
+        "ring"
+      ],
+      "tags": [
+        "induction",
+        "summation",
+        "formula"
+      ]
+    },
+    {
+      "id": "real_007",
+      "name": "Geometric Series Sum: \u03a3(i=0..n) 2^i = 2^(n+1) - 1",
+      "category": "induction",
+      "difficulty": 4,
+      "description": "Sum of powers of 2 equals next power minus 1",
+      "lean_code": "theorem geometric_series_sum (n : Nat) : \n    (\u2211 i in Finset.range (n + 1), 2^i) = 2^(n + 1) - 1 := by\n  induction n with\n  | zero => simp\n  | succ n ih =>\n    rw [Finset.sum_range_succ, ih]\n    have : 2^(n + 1) + 2^(n + 1) = 2^(n + 2) := by\n      rw [\u2190 Nat.mul_two, \u2190 pow_succ]\n    rw [this]\n    simp",
+      "expected_proof_tokens": 650,
+      "key_lemmas": [
+        "Finset.sum_range_succ",
+        "pow_succ",
+        "Nat.mul_two"
+      ],
+      "tags": [
+        "induction",
+        "geometric",
+        "powers"
+      ]
+    },
+    {
+      "id": "real_008",
+      "name": "Divisibility Transitivity",
+      "category": "number_theory",
+      "difficulty": 3,
+      "description": "If a|b and b|c, then a|c",
+      "lean_code": "theorem dvd_trans {a b c : Nat} (hab : a \u2223 b) (hbc : b \u2223 c) : a \u2223 c := by\n  obtain \u27e8k, hk\u27e9 := hab\n  obtain \u27e8l, hl\u27e9 := hbc\n  use k * l\n  rw [hl, hk, mul_assoc]",
+      "expected_proof_tokens": 380,
+      "key_lemmas": [
+        "dvd_mul_right",
+        "mul_assoc"
+      ],
+      "tags": [
+        "number_theory",
+        "divisibility",
+        "transitivity"
+      ]
+    },
+    {
+      "id": "real_009",
+      "name": "\u221a2 is Irrational",
+      "category": "number_theory",
+      "difficulty": 6,
+      "description": "The square root of 2 cannot be expressed as a ratio",
+      "lean_code": "theorem sqrt_two_irrational' : \u00ac\u2203 (p q : Nat), q \u2260 0 \u2227 p * p = 2 * q * q := by\n  intro h\n  obtain \u27e8p, q, hq, hpq\u27e9 := h\n  -- Classical proof by infinite descent\n  have : p % 2 = 0 := by\n    have : 2 \u2223 p * p := by\n      use q * q\n      linarith\n    exact Nat.Prime.dvd_of_dvd_pow Nat.prime_two this\n  obtain \u27e8k, hk\u27e9 := this\n  rw [hk] at hpq\n  ring_nf at hpq\n  have : q % 2 = 0 := by\n    have : 2 \u2223 q * q := by\n      use k * k\n      linarith\n    exact Nat.Prime.dvd_of_dvd_pow Nat.prime_two this\n  sorry  -- Full proof requires descent argument",
+      "expected_proof_tokens": 1800,
+      "key_lemmas": [
+        "Nat.prime_two",
+        "infinite_descent",
+        "coprime"
+      ],
+      "tags": [
+        "irrationality",
+        "classical",
+        "number_theory"
+      ]
+    },
+    {
+      "id": "real_010",
+      "name": "Infinitude of Primes",
+      "category": "number_theory",
+      "difficulty": 5,
+      "description": "There are infinitely many prime numbers",
+      "lean_code": "theorem infinitude_of_primes : \u2200 n : Nat, \u2203 p > n, Nat.Prime p := by\n  intro n\n  have : \u2203 p, Nat.Prime p \u2227 p \u2223 (n + 1).factorial + 1 := by\n    apply Nat.exists_prime_and_dvd\n    simp\n  obtain \u27e8p, hp, hpdvd\u27e9 := this\n  use p\n  constructor\n  \u00b7 show p > n\n    by_contra h\n    push_neg at h\n    have : p \u2223 (n + 1).factorial := by\n      apply Nat.dvd_factorial\n      \u00b7 exact hp.pos\n      \u00b7 linarith\n    have : p \u2223 1 := by\n      apply Nat.dvd_sub' hpdvd this\n    simp at this\n    contradiction\n  \u00b7 exact hp",
+      "expected_proof_tokens": 1200,
+      "key_lemmas": [
+        "Nat.exists_prime_and_dvd",
+        "Nat.dvd_factorial",
+        "factorial"
+      ],
+      "tags": [
+        "primes",
+        "infinitude",
+        "euclid"
+      ]
+    },
+    {
+      "id": "real_011",
+      "name": "Bezout's Identity",
+      "category": "number_theory",
+      "difficulty": 5,
+      "description": "For any a,b there exist x,y such that ax + by = gcd(a,b)",
+      "lean_code": "theorem bezout_identity (a b : Nat) : \n    \u2203 x y : Int, a * x + b * y = Nat.gcd a b := by\n  use Nat.gcdA a b, Nat.gcdB a b\n  apply Nat.gcd_eq_gcd_ab",
+      "expected_proof_tokens": 280,
+      "key_lemmas": [
+        "Nat.gcd_eq_gcd_ab",
+        "Nat.gcdA",
+        "Nat.gcdB"
+      ],
+      "tags": [
+        "bezout",
+        "gcd",
+        "extended_euclidean"
+      ]
+    },
+    {
+      "id": "real_012",
+      "name": "Fermat's Little Theorem",
+      "category": "number_theory",
+      "difficulty": 6,
+      "description": "If p is prime and p \u2224 a, then a^(p-1) \u2261 1 (mod p)",
+      "lean_code": "theorem fermat_little {a p : Nat} (hp : Nat.Prime p) (h : \u00acp \u2223 a) : \n    a^(p - 1) \u2261 1 [MOD p] := by\n  apply Nat.ModEq.pow_card_sub_one'\n  intro h\n  apply h\n  exact Nat.Prime.dvd_of_dvd_pow hp h",
+      "expected_proof_tokens": 520,
+      "key_lemmas": [
+        "Nat.ModEq.pow_card_sub_one'",
+        "Nat.Prime"
+      ],
+      "tags": [
+        "fermat",
+        "modular",
+        "prime"
+      ]
+    },
+    {
+      "id": "real_013",
+      "name": "Pigeonhole Principle",
+      "category": "combinatorics",
+      "difficulty": 4,
+      "description": "If n+1 pigeons in n holes, some hole has \u22652 pigeons",
+      "lean_code": "theorem pigeonhole_simple {\u03b1 \u03b2 : Type} [Fintype \u03b1] [Fintype \u03b2] \n    (f : \u03b1 \u2192 \u03b2) (h : Fintype.card \u03b1 > Fintype.card \u03b2) : \n    \u2203 (b : \u03b2), \u2203 (a\u2081 a\u2082 : \u03b1), a\u2081 \u2260 a\u2082 \u2227 f a\u2081 = b \u2227 f a\u2082 = b := by\n  by_contra h'\n  push_neg at h'\n  have : Function.Injective f := by\n    intro a\u2081 a\u2082 hf\n    by_contra hne\n    specialize h' (f a\u2081)\n    simp at h'\n    contradiction\n  have : Fintype.card \u03b1 \u2264 Fintype.card \u03b2 := by\n    apply Fintype.card_le_of_injective f this\n  linarith",
+      "expected_proof_tokens": 850,
+      "key_lemmas": [
+        "Fintype.card_le_of_injective",
+        "Function.Injective"
+      ],
+      "tags": [
+        "combinatorics",
+        "pigeonhole",
+        "injective"
+      ]
+    },
+    {
+      "id": "real_014",
+      "name": "Binomial Expansion (a+b)\u00b2",
+      "category": "algebra",
+      "difficulty": 2,
+      "description": "(a+b)\u00b2 = a\u00b2 + 2ab + b\u00b2",
+      "lean_code": "theorem binomial_square (a b : Nat) : (a + b)^2 = a^2 + 2*a*b + b^2 := by\n  rw [pow_two, pow_two, pow_two]\n  ring",
+      "expected_proof_tokens": 120,
+      "key_lemmas": [
+        "pow_two",
+        "ring"
+      ],
+      "tags": [
+        "algebra",
+        "binomial",
+        "ring"
+      ]
+    },
+    {
+      "id": "real_015",
+      "name": "Power Set Has Greater Cardinality",
+      "category": "set_theory",
+      "difficulty": 6,
+      "description": "For any set S, |P(S)| > |S|",
+      "lean_code": "theorem cantor_theorem {\u03b1 : Type} : \n    \u00ac\u2203 (f : \u03b1 \u2192 Set \u03b1), Function.Bijective f := by\n  intro h\n  obtain \u27e8f, hf\u27e9 := h\n  let S := {x : \u03b1 | x \u2209 f x}\n  obtain \u27e8s, hs\u27e9 := hf.surjective S\n  have h\u2081 : s \u2209 f s := by\n    intro h'\n    have : s \u2209 f s := hs s\n    contradiction\n  have h\u2082 : s \u2208 S := by\n    have : f s = S := hs\n    rw [\u2190 this]\n    exact h\u2081\n  contradiction",
+      "expected_proof_tokens": 1500,
+      "key_lemmas": [
+        "Function.Bijective",
+        "diagonal_argument"
+      ],
+      "tags": [
+        "set_theory",
+        "cantor",
+        "diagonalization"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_proofs": 15,
+    "difficulty_range": "1-6",
+    "avg_difficulty": 3.533333333333333,
+    "total_axiommaths_tokens": 9300,
+    "avg_tokens_per_proof": 620.0,
+    "min_tokens": 120,
+    "max_tokens": 1800,
+    "by_category": {
+      "arithmetic": {
+        "count": 2,
+        "total_tokens": 330
+      },
+      "number_theory": {
+        "count": 7,
+        "total_tokens": 4850
+      },
+      "logic": {
+        "count": 1,
+        "total_tokens": 580
+      },
+      "induction": {
+        "count": 2,
+        "total_tokens": 1070
+      },
+      "combinatorics": {
+        "count": 1,
+        "total_tokens": 850
+      },
+      "algebra": {
+        "count": 1,
+        "total_tokens": 120
+      },
+      "set_theory": {
+        "count": 1,
+        "total_tokens": 1500
+      }
+    }
+  }
+}
